@@ -1,32 +1,28 @@
 <%- include('./partials/head') %>
 
-<article class="card" id="card">
-  <div class="shine-box"></div>
-  <button class="btn-turn" onclick="Flip()">⟲</button>
-  <button class="btn-dark" onclick="DarkMode()">🌙</button>
-
-  <section class="card-box" id="front-card">
-    <div class="M">M</div>
-    <section class="col-40">
-      <img id="img" src="assets/Mohammed.png" alt="profile" width="100%" height="100%">
+<main class="profile-card">
+  <!-- title -->
+  <h1>Profile Card</h1>
+  <article class="card-content">
+    <!-- left section -->
+    <div class="left-section">
+      <div class="img-container">
+        <img src="./assets/Mohammed.png" alt="profile-img">
+      </div>
+    </div>
+    <!-- right section -->
+    <section class="right-section">
+      <h2>Informatie</h2>
+      <ul>
+        <li><span>Name:</span> <%= data.name %></li>
+        <li><span>Nickname:</span> <%= data.nickname %></li>
+        <li><span>Github:</span> <%= data.github_handle %></li>
+        <li><span>Email:</span> <%= data.email %></li>
+        <li><span>Phone:</span> <%= data.phone_number %></li>
+        <li><span>Squad:</span> <%= data.squad_id %></li>
+      </ul>
     </section>
-    <section class="col-60">
-      <section class="text-box">
-        <h1 id="h1-front"><span>M</span>ohammed</h1>
-      <p>El Mossati</p>
-      </section>
-    </section>
-</section>
-
-<section class="card-box" id="back-card">
-  <div class="M">M</div>
-  <h1 id="h1-back"><span>I</span>nformation</h1>
-  <ul>
-    <li>HTML<span class="stars" id="stars1">★★★☆☆</span></li>
-    <li>CSS<span class="stars" id="stars2">★★☆☆☆</span></li>
-    <li>Javascript<span class="stars" id="stars3">★☆☆☆☆</span></li>
-  </ul>
-</section>
-</article>
+  </article>
+</main>
 
 <%- include('./partials/foot') %>

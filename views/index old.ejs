@@ -1,0 +1,32 @@
+<%- include('./partials/head') %>
+
+<article class="card" id="card">
+  <div class="shine-box"></div>
+  <button class="btn-turn" onclick="Flip()">⟲</button>
+  <button class="btn-dark" onclick="DarkMode()">🌙</button>
+
+  <section class="card-box" id="front-card">
+    <div class="M">M</div>
+    <section class="col-40">
+      <img id="img" src="assets/Mohammed.png" alt="profile" width="100%" height="100%">
+    </section>
+    <section class="col-60">
+      <section class="text-box">
+        <h1 id="h1-front"><span>M</span>ohammed</h1>
+      <p>El Mossati</p>
+      </section>
+    </section>
+</section>
+
+<section class="card-box" id="back-card">
+  <div class="M">M</div>
+  <h1 id="h1-back"><span>I</span>nformation</h1>
+  <ul>
+    <li>HTML<span class="stars" id="stars1">★★★☆☆</span></li>
+    <li>CSS<span class="stars" id="stars2">★★☆☆☆</span></li>
+    <li>Javascript<span class="stars" id="stars3">★☆☆☆☆</span></li>
+  </ul>
+</section>
+</article>
+
+<%- include('./partials/foot') %>
