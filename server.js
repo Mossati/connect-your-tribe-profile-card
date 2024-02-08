@@ -5,10 +5,17 @@ import express from 'express'
 import fetchJson from './helpers/fetch-json.js'
 
 // Haal data op uit de FDND API, ga pas verder als de data gedownload is
-const data = await fetchJson('https://fdnd.directus.app/items/person/56')
+const person = await fetchJson('https://fdnd.directus.app/items/person/56')
 const squad = await fetchJson('https://fdnd.directus.app/items/squad/5')
-console.log(data); // uncomment om de opgehaalde data te checken
+console.log(person); // uncomment om de opgehaalde data te checken
 console.log(squad);
+
+const array = {
+  person: person,
+  squad: squad
+}
+
+console.log(array);
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -24,7 +31,7 @@ app.use(express.static('public'))
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
-  response.render('index', data)
+  response.render('index', array)
 })
 
 // Maak een POST route voor de index

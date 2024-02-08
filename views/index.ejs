@@ -1,38 +1,39 @@
 <%- include('./partials/head') %>
 
 <main>
-  <section class="profile-card">
+  <section class="profile-card card-scale">
     <!-- card header -->
     <div class="card-header">
       <div class="card-cover"></div>
       <img class="card-avatar" src="./assets/profile-pic.png" alt="avatar">
-      <h1><%= data.name %></h1>
+      <h1><%= person.data.name %></h1>
       <p class="sub-header">Frontend developer</p>
     </div>
 
-    <!-- card content -->
-    <div class="card-content" id="card-about">
+    <!-- content: card about -->
+    <div class="card-content content-slide" id="card-about">
       <h2>Bio</h2>
-      <p><%= data.bio %></p>
+      <p><%= person.data.bio %></p>
     </div>
 
-    <div class="card-content" id="card-skills">
+    <!-- content: card skills -->
+    <div class="card-content content-slide" id="card-skills">
       <h2>Skills</h2>
-      <ul>
+      <ul class="progress-list">
         <li>
-          <p>HTML</p>
+          <p><i class="fa-brands fa-html5"></i> HTML</p>
           <div class="progress-bar">
             <div class="progress-value" data-value="85"></div>
           </div>
         </li>
         <li>
-          <p>CSS</p>
+          <p><i class="fa-brands fa-css3-alt"></i> CSS</p>
           <div class="progress-bar">
             <div class="progress-value" data-value="80"></div>
           </div>
         </li>
         <li>
-          <p>Javascript</p>
+          <p><i class="fa-brands fa-js"></i> Javascript</p>
           <div class="progress-bar">
             <div class="progress-value" data-value="70"></div>
           </div>
@@ -40,25 +41,27 @@
       </ul>
     </div>
 
-    <div class="card-content" id="card-details">
+    <!-- content: card details -->
+    <div class="card-content content-slide" id="card-details">
       <h2>Details</h2>
       <ul>
-        <li><p>Nickname: <span><%= data.nickname %></span></p></li>
-        <li><p>Github handle: <span><%= data.github_handle %></span></p></li>
-        <li><p>Role: <span><%= data.role %></span></p></li>
-        <li><p>Email: <span><%= data.email %></span></p></li>
-        <li><p>Phone: <span><%= data.phone_number %></span></p></li>
-        <li><p>Squad: <span><%= data.squad_id %></span></p></li>
+        <li><p>Fullname: <span><%= person.data.name %> <%= person.data.prefix %> <%= person.data.surname %></span></p></li>
+        <li><p>Nickname: <span><%= person.data.nickname %></span></p></li>
+        <li><p>Github handle: <span><%= person.data.github_handle %></span></p></li>
+        <li><p>Role: <span><%= person.data.role %></span></p></li>
+        <li><p>Email: <span><%= person.data.email %></span></p></li>
+        <li><p>Phone: <span><%= person.data.phone_number %></span></p></li>
+        <li><p>Squad: <span><%= squad.data.name %></span></p></li>
       </ul>
 
-      <a class="btn" href="<%= data.website %>">Github Profile</a>
+      <a class="btn" href="<%= person.data.website %>"><i class="fa-brands fa-github"></i> Github Profile</a>
     </div>
 
     <!-- card nav -->
     <ul class="card-nav">
-      <li>About</li>
-      <li>Skills</li>
-      <li>Details</li>
+      <li data-page="0" class="active">About</li>
+      <li data-page="1">Skills</li>
+      <li data-page="2">Details</li>
     </ul>
   </section>
 </main>
