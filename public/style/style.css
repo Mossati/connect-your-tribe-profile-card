@@ -145,7 +145,36 @@ main {
                         background-position: center;
                         background-size: cover;
                         background-repeat: no-repeat;
-                        border-radius: inherit;
+                        border-top-left-radius: inherit;
+                        border-bottom-left-radius: inherit;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        position: relative;
+
+                        & .tool-tip {
+                            display: none;
+                            position: absolute;
+                            top: -2.1em;
+                            right: -1.1em;
+                            background-color: var(--card-header-color);
+                            border-radius: 0.5em;
+                            padding: 0.2em;
+                            color: var(--card-bg-color);
+                            font-size: 0.9em;
+                        }
+
+                        & .tool-tip::before {
+                            content: "";
+                            width: 0;
+                            height: 0;
+                            position: absolute;
+                            right: 50%;
+                            bottom: -0.5em;
+                            border-left: 0.2em solid transparent;
+                            border-right: 0.2em solid transparent;
+                            border-bottom: 0.5em solid var(--card-header-color);
+                            transform: rotate(180deg) translateX(-50%);
+                        }
                     }
                 }
             }

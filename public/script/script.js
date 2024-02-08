@@ -36,17 +36,24 @@ navItems.forEach(item => {
 // ===========================================
 // progress bar
 // ===========================================
-function progressValue() {
-    var progressList = document.querySelector('.progress-list');
-    var progressItems = progressList.querySelectorAll('li');
+var progressList = document.querySelector('.progress-list');
+var progressItems = progressList.querySelectorAll('li');
 
-    progressItems.forEach(item => {
-        var progressBar = item.querySelector('.progress-bar');
-        var progressValue = progressBar.querySelector('.progress-value');
-        var dataSet = progressValue.dataset.value;
+progressItems.forEach(item => {
+    var progressBar = item.querySelector('.progress-bar');
+    var progressValue = progressBar.querySelector('.progress-value');
+    var dataSet = progressValue.dataset.value;
 
-        progressValue.style.width = dataSet + "%";
+    progressValue.style.width = dataSet + "%";
+
+    var toolTip = progressValue.querySelector('.tool-tip');
+    toolTip.innerHTML = dataSet + "%";
+
+    progressValue.addEventListener("mouseover", function() {
+        toolTip.style.display = 'block';
     });
-}
 
-progressValue();
+    progressValue.addEventListener("mouseout", function() {
+        toolTip.style.display = 'none';
+    })
+});
